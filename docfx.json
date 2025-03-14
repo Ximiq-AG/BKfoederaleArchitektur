@@ -1,0 +1,52 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "architecture/**.md",
+          "architecture/**/toc.yml",
+          "sales/**.md",
+          "sales/**/toc.yml",
+          "cpsv/**.md",
+          "cpsv/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ],
+        "metadata": {
+          "_edit_url_template": "https://github.com/stubenfluge/ContentColaboration/edit/main/{path}"
+        }
+      },
+      {
+        "files": [
+          "extern/**.md",
+          "extern/**/toc.yml"
+        ],
+       "metadata": {
+          "_edit_url_template": "https://github.com/JNGNGY/DocFX_Test/edit/main/{path}",
+          "_gitContribution": true,
+          "_path": "extern/{file}" 
+        }
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**",
+          "templates/**"
+        ]
+      }
+    ],
+    "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "Kollaboratives Architekturmanagement",
+      "_appFooter": "Ximiq AG",
+      "_enableSearch": true
+    },
+    "template": [
+      "default",
+      "templates"
+    ]
+  }
+}

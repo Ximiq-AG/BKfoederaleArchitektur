@@ -1,0 +1,6 @@
+- name: Lorem ipsum
+  href: lorem_ipsum.md
+- name: Lorem ipsum with headings
+  href: lorem_ipsum2.md
+- name: Archive
+  href: archive.md

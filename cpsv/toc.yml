@@ -1,0 +1,10 @@
+- name: Inhalt
+  href: intro.md
+- name: Grafische Darstellung der Beziehungen zwischen den Klassen und Attributen des vollständigen Core Public Service Vocabulary Application Profiles
+  href: graphicalInterface.md
+- name: Obligatorische und optionale Klassen und Attribute von CPSV-AP
+  href: mandatoryOptionalClasses.md
+- name: Core Public Servce Vocabulary Applications Profile (CPSV-AP)
+  href: applicationProfile.md
+- name: Empfohlene kontrollierte Vokabularien
+  href: recomandedControlledVocabulary.md

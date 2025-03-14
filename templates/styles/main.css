@@ -1,0 +1,6 @@
+:root{
+    --main-color: #9E5F98;
+}
+
+.navbar-inverse{background-color: var(--main-color);}
+.navbar-nav>.active>a{background-color:var(---main-color) !important;}
