@@ -18,9 +18,16 @@ jobs:
       - name: Fetch External Markdown Files
         run: |
           mkdir -p DocFX_Test
-          echo "Lade HelloWorld.md aus JNGNGY/DocFX_Test herunter..."
-          wget -O DocFX_Test/HelloWorld.md https://raw.githubusercontent.com/JNGNGY/DocFX_Test/main/HelloWorld.md
+          echo "Lade alle .md-Dateien aus JNGNGY/DocFX_Test/TestFolder herunter..."
 
+          # GitHub API aufrufen, um alle .md-Dateien im TestFolder zu bekommen
+          curl -s https://api.github.com/repos/JNGNGY/DocFX_Test/contents/TestFolder | \
+            grep '"download_url":' | grep '\.md"' | cut -d '"' -f 4 | \
+            while read file; do
+              filename=$(basename "$file")
+              echo "Lade $filename herunter..."
+              wget -O "DocFX_Test/$filename" "$file"
+            done
       # 3) .NET 8 SDK installieren
       - name: Install .NET 8
         uses: actions/setup-dotnet@v2

@@ -37,12 +37,12 @@
       }
     },
     "fileMetadata": {
-      "fileMetadata": {
-      "_gitEditUrlPattern": {
-        "DocFX_Test/**": "https://github.com/JNGNGY/DocFX_Test/edit/main/{path}"
+      "_gitContribute": {
+        "TestFolder/**": {
+          "repo": "https://github.com/JNGNGY/DocFX_Test",
+          "branch": "main"
+        }
       }
-    }
-
     },
     "template": [
       "default",
