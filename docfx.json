@@ -38,7 +38,7 @@
     },
     "fileMetadata": {
       "_gitContribute": {
-        "DocFX_Test/**": {
+        "*.md": {
           "repo": "https://github.com/JNGNGY/DocFX_Test",
           "branch": "main"
         }
