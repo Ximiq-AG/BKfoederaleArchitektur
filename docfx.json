@@ -13,8 +13,8 @@
           "cpsv/**/toc.yml",
           "toc.yml",
           "*.md",
-          "DocFX_Test/**.md",
-          "DocFX_Test/**/toc.yml"
+          "TestFolder/**.md",
+          "TestFolder/**/toc.yml"
         ]
       }
     ],

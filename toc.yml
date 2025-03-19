@@ -7,4 +7,4 @@
 - name: CPSV
   href: cpsv/
 - name: Extern
-  href: DocFX_Test/HelloWorld.md
+  href: TestFolder/Hello.md
