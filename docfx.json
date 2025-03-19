@@ -12,22 +12,10 @@
           "cpsv/**.md",
           "cpsv/**/toc.yml",
           "toc.yml",
-          "*.md"
-        ],
-        "metadata": {
-          "_edit_url_template": "https://github.com/stubenfluge/ContentColaboration/edit/main/{path}"
-        }
-      },
-      {
-        "files": [
-          "extern/**.md",
-          "extern/**/toc.yml"
-        ],
-       "metadata": {
-          "_edit_url_template": "https://github.com/JNGNGY/DocFX_Test/edit/main/{path}",
-          "_gitContribution": true,
-          "_path": "extern/{file}" 
-        }
+          "*.md",
+          "DocFX_Test/**.md",
+          "DocFX_Test/**/toc.yml"
+        ]
       }
     ],
     "resource": [
@@ -42,7 +30,19 @@
     "globalMetadata": {
       "_appTitle": "Kollaboratives Architekturmanagement",
       "_appFooter": "Ximiq AG",
-      "_enableSearch": true
+      "_enableSearch": true,
+      "_gitContribute": {
+        "repo": "https://github.com/Ximiq-AG/BKfoederaleArchitektur",
+        "branch": "main"
+      }
+    },
+    "fileMetadata": {
+      "_gitContribute": {
+        "DocFX_Test/**": {
+          "repo": "https://github.com/JNGNGY/DocFX_Test",
+          "branch": "main"
+        }
+      }
     },
     "template": [
       "default",

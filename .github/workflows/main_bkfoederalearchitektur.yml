@@ -10,39 +10,38 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1) Checke das Repository aus
-      - name: Checkout
+      # 1) Repository auschecken
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      # 2) .NET 8 SDK installieren
+      # 2) Markdown-Dateien aus JNGNGY/DocFX_Test holen
+      - name: Fetch External Markdown Files
+        run: |
+          mkdir -p DocFX_Test
+          echo "Lade HelloWorld.md aus JNGNGY/DocFX_Test herunter..."
+          wget -O DocFX_Test/HelloWorld.md https://raw.githubusercontent.com/JNGNGY/DocFX_Test/main/HelloWorld.md
+
+      # 3) .NET 8 SDK installieren
       - name: Install .NET 8
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '8.x'
 
-      # 3) DocFX als .NET-Tool installieren
+      # 4) DocFX als .NET-Tool installieren
       - name: Install DocFX
         run: |
           dotnet tool install --global docfx
-          # Füge den Tool-Pfad dem PATH hinzu, falls GitHub Actions es nicht automatisch tut
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
-      # 4) Dokumentation mit DocFX bauen
+      # 5) Dokumentation mit DocFX bauen
       - name: Build Documentation
         run: docfx docfx.json
 
-      # 5) Deployment zur Azure Static Web App
+      # 6) Deployment zur Azure Static Web App
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
-          # Dieses Secret musst du unter "Settings -> Secrets -> Actions" hinterlegen
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-
-          # GitHub Token (automatisch verfügbar, muss nicht als Secret angelegt werden)
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-
-          # Sagt, dass wir nur fertige Dateien hochladen und keinen Build durch Oryx ausführen lassen
           action: 'upload'
-
-          # Das Verzeichnis, in dem DocFX alle fertigen HTML-Dateien ablegt
           app_location: '_site'
